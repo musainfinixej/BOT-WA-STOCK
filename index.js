@@ -58,7 +58,9 @@ async function startBot() {
     if (!msg.message) return;
 
     const text =
-      msg.message.conversation || "";
+  msg.message.conversation ||
+  msg.message.extendedTextMessage?.text ||
+  "";
 
     const from = msg.key.remoteJid;
 
